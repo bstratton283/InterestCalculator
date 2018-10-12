@@ -85,6 +85,7 @@ namespace CodingChallenge.Business.Tests
 
             Wallet bartsWallet = new Wallet();
             bartsWallet.AddCard(mc);
+            bartsWallet.AddCard(mc);
             bartsWallet.AddCard(visa);
 
             Person bart = new Person("Bart Simpson", new List<Wallet>() { bartsWallet });
@@ -103,10 +104,10 @@ namespace CodingChallenge.Business.Tests
             decimal interestLisasWallet     = InterestCalculator.CalculateWalletSimpleInterest(lisasWallet);
 
             //Assert
-            Assert.Equal(15m, interestBart);
+            Assert.Equal(20m, interestBart);
             Assert.Equal(15m, interestLisa);
 
-            Assert.Equal(15m, interestBartsWallet);
+            Assert.Equal(20m, interestBartsWallet);
             Assert.Equal(15m, interestLisasWallet);
         }
     }
